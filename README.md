@@ -1,16 +1,35 @@
 # 9.22
-Calendar c1 = Calendar.getInstance();
-// 获得年份
-int year = c1.get(Calendar.YEAR);
-// 获得月份
-int month = c1.get(Calendar.MONTH) + 1;
-// 获得日期
-int date = c1.get(Calendar.DATE);
-// 获得小时
-int hour = c1.get(Calendar.HOUR_OF_DAY);
-// 获得分钟
-int minute = c1.get(Calendar.MINUTE);
-// 获得秒
-int second = c1.get(Calendar.SECOND);
-// 获得星期几（注意（这个与Date类是不同的）：1代表星期日、2代表星期1、3代表星期二，以此类推）
-int day = c1.get(Calendar.DAY_OF_WEEK);
+import java.util.*;
+  
+public class GregorianCalendarDemo {
+ 
+   public static void main(String[] args) {
+      String months[] = {
+      "Jan", "Feb", "Mar", "Apr",
+      "May", "Jun", "Jul", "Aug",
+      "Sep", "Oct", "Nov", "Dec"};
+      
+      int year;
+      // 初始化 Gregorian 日历
+      // 使用当前时间和日期
+      // 默认为本地时间和时区
+      GregorianCalendar gcalendar = new GregorianCalendar();
+      // 显示当前时间和日期的信息
+      System.out.print("Date: ");
+      System.out.print(months[gcalendar.get(Calendar.MONTH)]);
+      System.out.print(" " + gcalendar.get(Calendar.DATE) + " ");
+      System.out.println(year = gcalendar.get(Calendar.YEAR));
+      System.out.print("Time: ");
+      System.out.print(gcalendar.get(Calendar.HOUR) + ":");
+      System.out.print(gcalendar.get(Calendar.MINUTE) + ":");
+      System.out.println(gcalendar.get(Calendar.SECOND));
+      
+      // 测试当前年份是否为闰年
+      if(gcalendar.isLeapYear(year)) {
+         System.out.println("当前年份是闰年");
+      }
+      else {
+         System.out.println("当前年份不是闰年");
+      }
+   }
+}
